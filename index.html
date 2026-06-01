@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sapana Chhetri</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Sora:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:     #fbe6ee;
+      --ink:    #4a2733;
+      --muted:  #9c7180;
+      --accent: #e36c91;
+      --ring:   #fff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 48px 24px;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .profile { width: 100%; max-width: 440px; }
+
+    .photo {
+      width: clamp(150px, 45vw, 200px);
+      height: clamp(150px, 45vw, 200px);
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 26px;
+      background: #f3a8c4;
+      box-shadow: 0 0 0 8px var(--ring), 0 18px 40px -18px rgba(74,39,51,0.4);
+      animation: float 6s ease-in-out infinite;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-9px); }
+    }
+
+    .name {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(30px, 8vw, 42px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+    }
+
+    .bio {
+      font-weight: 300;
+      font-size: clamp(15px, 4vw, 16.5px);
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 16px auto 0;
+      max-width: 38ch;
+    }
+
+    .contact {
+      margin-top: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      align-items: center;
+      font-size: clamp(14px, 3.6vw, 15px);
+    }
+    .contact .row { display: inline-flex; align-items: center; gap: 9px; }
+    .contact a { color: var(--accent); text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    .reveal { opacity: 0; transform: translateY(14px); animation: rise 0.7s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.15s; }
+    .d3 { animation-delay: 0.25s; }
+    .d4 { animation-delay: 0.35s; }
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="profile">
+
+    <!-- Loads "sapana.jpg" from the SAME folder as this file -->
+    <div class="photo reveal d1">
+      <img src="sapana.jpg" alt="Sapana Chhetri" />
+    </div>
+
+    <h1 class="name reveal d2">Sapana Chhetri</h1>
+
+    <p class="bio reveal d3">
+      Hi, I am Sapana Chhetri — a curious learner who loves building things and exploring new ideas.
+    </p>
+
+    <div class="contact reveal d4">
+      <div class="row">📍 <span>Amarsingh 12, Pokhara</span></div>
+      <div class="row">✉️ <a href="mailto:be2023se867@gces.edu.np">be2023se867@gces.edu.np</a></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
